@@ -331,7 +331,7 @@ RUN echo "R_LIBS_USER=${R_LIBS_USER}"
 ################################################################################
 ## User
 ################################################################################
-RUN groupadd --gid ${GID} ${USER}
+RUN groupadd -o --gid ${GID} ${USER}
 RUN useradd --create-home --uid=${UID} --gid=${GID} --shell /bin/fish ${USER}
 RUN echo "${USER}:${PASSWORD}" | chpasswd
 RUN echo "${USER} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
