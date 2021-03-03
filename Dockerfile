@@ -312,6 +312,9 @@ RUN echo "GID=${GID}"
 ARG PASSWORD=aviral
 RUN echo "PASSWORD=${PASSWORD}"
 
+ARG R_LIBS_USER=
+RUN echo "R_LIBS_USER=${R_LIBS_USER}"
+
 ################################################################################
 ## Web Server
 ## https://www.linkedin.com/pulse/serve-static-files-from-docker-via-nginx-basic-example-arun-kumar
@@ -335,7 +338,7 @@ RUN echo "${USER} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER ${USER}
 WORKDIR /home/${USER}
 #RUN mkdir -p /home/aviral/library
-ENV R_LIBS_USER /home/${USER}/library
+ENV R_LIBS_USER ${R_LIBS_USER}
 ENV R_KEEP_PKG_SOURCE 1
 ENV R_ENABLE_JIT 0
 ENV R_COMPILE_PKGS 0
