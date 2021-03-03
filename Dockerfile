@@ -363,5 +363,5 @@ ENV OMP_NUM_THREADS 1
 #RUN git clone --branch r-3.5.0 https://github.com/PRL-PRG/promise-dyntracing-experiment.git
 #RUN cd promise-dyntracing-experiment && xvfb-run make install-dependencies DEPENDENCIES_FILEPATH=scripts/package-dependencies.txt && rm -rf *.out
 #
-#ADD entrypoint.sh /entrypoint.sh
-#ENTRYPOINT ["/entrypoint.sh"]
+ADD entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
