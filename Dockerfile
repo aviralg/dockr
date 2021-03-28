@@ -72,6 +72,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -qy install texlive-full libcairo2-de
 RUN DEBIAN_FRONTEND=noninteractive apt-get -qy install \
     build-essential                                    \
     gdb                                                \
+    valgrind                                           \
+    linux-perf                                         \
     cmake                                              \
     clang-format                                       \
     clang-tidy                                         \
